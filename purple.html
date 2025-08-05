@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>云南菜市场数量（紫色渐变）</title>
+    <title>云南菜市场数量</title>
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
     <style>
         #chart-container {
@@ -28,12 +28,15 @@
         // 配置项
         const option = {
             title: {
-                text: '云南各地级市菜市场数量分布（紫色渐变）',
+                text: '云南各地级市菜市场数量分布',
                 left: 'center',
                 textStyle: {
                     fontSize: 16,
                     fontWeight: 'bold'
                 }
+            },
+            grid: {  // 新增：调整图表整体边距，给底部留更多空间
+                bottom: '20%'
             },
             tooltip: {
                 trigger: 'item',
@@ -77,10 +80,10 @@
                 calculable: true,
                 orient: 'horizontal',
                 left: 'center',
-                bottom: 10,
+                bottom: 50,  // 修改：从 10 调整为 30，向下移动
                 text: ['高', '低'],
                 inRange: {
-                    color: ['#E0BBE4', '#8E44AD'] // 浅紫到深紫
+                    color: ['#E0BBE4', '#8E44AD']
                 },
                 textStyle: {
                     color: '#333'
@@ -95,8 +98,8 @@
                 barWidth: '60%',
                 itemStyle: {
                     color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                        { offset: 0, color: '#E0BBE4' }, // 顶部浅紫
-                        { offset: 1, color: '#8E44AD' }   // 底部深紫
+                        { offset: 0, color: '#E0BBE4' },
+                        { offset: 1, color: '#8E44AD' }
                     ]),
                     borderRadius: [4, 4, 0, 0]
                 },
